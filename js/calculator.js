@@ -1,85 +1,60 @@
-// calculator (mothship) class
-// ## generateCal
-//             ## view
-// Function init()     // to wrap all other functions
+// declare class Calculator
+class Calculator {
+    // ## view
+        // function generateElement to put elements in the html
 
-// diplay area class
-
-
-// bootstrap classes to declare at top level:
-    // text-center
-    // text-color: light
-
-
-function generateElemnt(
-    type, id, classList, parent=false
-    ){
-    let newElement = document.createElemen(type);
-    newElemnt.id = id
-    newElement.setAttrbute("class", classList);
-
-        if (parent){
-            parent.appendChild(newElement);
-        }else{
-            return newElement;
+        function init() {
+            // add div [bootstrap] class = container
+            // add div [bootstrap] class = row
+            // add output div [bootstrap] class = col-12
+            // add button divs [bootstrap] class = col-3 (col-6 for 0?)
         }
-}
 
+        // function to update output display
+            // get instructions for what to output from controller
 
-//     function calCreate()
-//             // body ref
-//         - var body = document.getElementsByTagName("body")
-//             // 
-//         - var table = documnet.createElemnt ("numtTable")
-//         - document.createElement()
-//         - top leve container div 
-//         - row cerate.elemnet div 
-//             - function gernerate0() col-12
-//         row div -col 3 for the rest of the calculator
-//         -nothing but coloms for the rest of the 1-9
-//             -lable squares 1-9
-//         -// PSG zero into a col-6
+        // other things that will change in view:
+        // buttons: change color on hover, outline when clicked
 
-//         // color coordinated
+        // manage colors here?
+        // bootstrap classes to declare at top level:
+        // text-center
+        // text-color: light
 
-//         ## Controller
-// clickhandlre(s)
-// - reg click 
-// - send and update the modle
-// - send and update view
-// -   
+    // ## Modle
+        // define data parameters:
+        // rawData, c for controller, display
 
+        // function to set initial values for data:
+        // init ()
+            // rawData = []; // updated by controller
+            // c = controller;
+            // display = 0;
 
+        // function to update state when button is pressed:
+            // append button output (number/operator/both) to rawData
+            // run evaluate rawData function
+            // return output to be updated in view
 
-//         ## Modle
-// function state()
-// - uptake the reg clicks
-// - track states of 
-//     currently displayed on calculator
-// - where are we in arithmatic
-// - remember last operation/state/number and last number
-// - be able to clear state = all clear
-// - have states for : results- result state only occure after '=' is hit
-//                     equations
+        // function to evaluate rawData
+            // check if there's an operator in rawData
+            // if so, split on operator and concatenate stuff either side, and perform operation (when equals sign has been pressed... but not if it's just numbers right?)
 
-
-// //a file for every class
-// // class is like a funtion for creating objects
-//     //each object created will have the same peroperties but dose not need to fill them all with a value and will have diffrenent values
-//     ex.
-//         class example{
-//             constructor(){
-
-//             }
-//         }
-//     run loop to make 16 new items operater num, special, dipalys
-//         var examplle1 = new example
-let operators = [
-    {
-        'id': '+',
-        'operation': function((n1,n2) => n1 + n2)
-    }
-]
-for (x in operators) {
-    let new_button = new OperatorButton();
+        // function for clearing data
+            // clear: while last item in rawData is a numeral, pop it
+            // all clear: model.init()
+        }
+        
+        //         ## Controller
+        let controller = {
+            // init function to wrap other init functions
+                // call view.init()
+                // call model.init()
+            
+            // clickhandlre(s) on buttons
+                // - get output from button (number and/or operator)
+                // - send and update the modle
+                // - use output from model to update view
+        }
+        
 }
